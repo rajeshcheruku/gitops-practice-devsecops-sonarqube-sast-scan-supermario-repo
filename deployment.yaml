@@ -28,6 +28,6 @@ spec:
     app: supermariogame
   ports:
   - protocol: TCP
-    port: 8600  # <-- Change this line to your desired port
+    port: 8600  # <-- Change this line to your desiredd port 
     targetPort: 8080
   type: LoadBalancer
