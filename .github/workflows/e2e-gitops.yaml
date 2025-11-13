@@ -29,13 +29,13 @@ jobs:
          args: >
            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
            -Dsonar.organization=${{ secrets.SONAR_ORG }}
-  #     # If you wish to fail your job when the Quality Gate is red, uncomment the
-  #     # following lines. This would typically be used to fail a deployment.
-  #     # - name: SonarQube Quality Gate Check
-  #     #   uses: sonarsource/sonarqube-quality-gate-action@master
-  #     #   timeout-minutes: 5
-  #     #   env:
-  #     #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # If you wish to fail your job when the Quality Gate is red, uncomment the
+      # following lines. This would typically be used to fail a deployment.
+      - name: SonarQube Quality Gate Check
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   
   build_push_supermario_docker_image:
     runs-on: ubuntu-latest
