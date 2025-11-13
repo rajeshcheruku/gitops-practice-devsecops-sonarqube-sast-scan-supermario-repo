@@ -29,7 +29,7 @@ jobs:
          args: >
            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
            -Dsonar.organization=${{ secrets.SONAR_ORG }}
-  #     # If you wish to fail your job when the Quality Gate is red, uncomgment the
+  #     # If you wish to fail your job when the Quality Gate is red, uncomment the
   #     # following lines. This would typically be used to fail a deployment.
   #     # - name: SonarQube Quality Gate Check
   #     #   uses: sonarsource/sonarqube-quality-gate-action@master
