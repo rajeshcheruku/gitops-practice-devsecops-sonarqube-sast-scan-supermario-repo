@@ -13,7 +13,7 @@ spec:
         app: supermariogame
     spec:
       containers:
-      - image: cherukudocker/cherukudocker:14
+      - image: cherukudocker/cherukudocker:15
         name: supermariogame-container
         ports:
         - containerPort: 8080
