@@ -24,11 +24,11 @@ jobs:
         env:          
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_HOST_URL: https://sonarcloud.io
         with:
          args: >
            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
            -Dsonar.organization=${{ secrets.SONAR_ORG }}
+           -Dsonar.branch.name=main
   #     # If you wish to fail your job when the Quality Gate is red, uncogmment the
   #     # following lines. This would typically be used to fail a deployment.
   #     # - name: SonarQube Quality Gate Check
