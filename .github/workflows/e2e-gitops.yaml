@@ -23,11 +23,9 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@v2
         env:          
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-        with:
-          host: https://sonarcloud.io
-          projectKey: mario
-          organization: rajeshcheruku
+          SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+          SONAR_ORG: ${{ secrets.SONAR_ORG }}
   #     # If you wish to fail your job when the Quality Gate is red, uncomment the
   #     # following lines. This would typically be used to fail a deployment.
   #     # - name: SonarQube Quality Gate Check
