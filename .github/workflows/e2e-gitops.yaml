@@ -17,15 +17,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Shallow clones should beee disabled for better analysis relevance
+          fetch-depth: 0  # Shallow clones should be disabled for better analysis relevance
  
       - name: Sonarcloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5
+        uses: SonarSource/sonarcloud-github-action@v3.1.0
         env:          
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
         with:
          args: >
-           -Dsonar.host.url=https://sonarcloud.io
            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
            -Dsonar.organization=${{ secrets.SONAR_ORG }}
   #     # If you wish to fail your job when the Quality Gate is red, uncomment the
