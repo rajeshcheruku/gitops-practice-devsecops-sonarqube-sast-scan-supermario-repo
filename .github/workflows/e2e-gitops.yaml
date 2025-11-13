@@ -20,12 +20,12 @@ jobs:
           fetch-depth: 0  # Shallow clones should beee disabled for better analysis relevance
  
       - name: Sonarcloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v5
         env:          
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
          args: >
-          #  -Dsonar.host.url=https://sonarcloud.io
+           -Dsonar.host.url=https://sonarcloud.io
            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
            -Dsonar.organization=${{ secrets.SONAR_ORG }}
   #     # If you wish to fail your job when the Quality Gate is red, uncomment the
